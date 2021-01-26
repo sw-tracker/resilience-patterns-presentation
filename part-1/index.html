@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Resilience Patterns</title>
+
+		<link rel="stylesheet" href="node_modules/reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="node_modules/reveal.js/dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="node_modules/reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<!--
+			Note that Windows uses `\r\n` instead of `\n` as its linefeed character.
+			For a regex that supports all operating systems, use `\r?\n` instead of `\n`.
+
+			data-separator -> horizontal slides
+			data-separator-vertical -> vertical slides
+			data-separator-notes -> speaker notes
+		-->
+		<div class="reveal">
+			<div class="slides">
+				<section>Reselience Patterns</section>
+				<section data-markdown="case-study-trampled-by-customers/index.md"
+					data-separator="^\n\n\n\n"
+					data-separator-vertical="^\n\n\n"
+					data-separator-notes="^Note:">
+				</section>
+				<section data-markdown="case-study-holiday-weekend-maintenance/index.md"
+					data-separator="^\n\n\n\n"
+					data-separator-vertical="^\n\n\n"
+					data-separator-notes="^Note:">
+				</section>
+			</div>
+		</div>
+
+		<script src="node_modules/reveal.js/dist/reveal.js"></script>
+		<script src="node_modules/reveal.js/plugin/notes/notes.js"></script>
+		<script src="node_modules/reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="node_modules/reveal.js/plugin/highlight/highlight.js"></script>
+		<script src="node_modules/reveal.js/plugin/search/search.js"></script>
+		<script src="node_modules/reveal.js/plugin/zoom/zoom.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealZoom ]
+			});
+		</script>
+	</body>
+</html>
