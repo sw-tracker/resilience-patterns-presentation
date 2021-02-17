@@ -14,26 +14,194 @@
 		<link rel="stylesheet" href="node_modules/reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
 	</head>
 	<body>
-		<!--
-			Note that Windows uses `\r\n` instead of `\n` as its linefeed character.
-			For a regex that supports all operating systems, use `\r?\n` instead of `\n`.
-
-			data-separator -> horizontal slides
-			data-separator-vertical -> vertical slides
-			data-separator-notes -> speaker notes
-		-->
 		<div class="reveal">
 			<div class="slides">
-				<section>Reselience Patterns</section>
-				<section data-markdown="case-study-trampled-by-customers/index.md"
-					data-separator="^\n\n\n\n"
-					data-separator-vertical="^\n\n\n"
-					data-separator-notes="^Note:">
+
+				<section data-background-image="./assets/resilience.jpg">
+					<h2 style="margin-bottom: 200px;">Designing Resilient Software</h2>
 				</section>
-				<section data-markdown="case-study-holiday-weekend-maintenance/index.md"
-					data-separator="^\n\n\n\n"
-					data-separator-vertical="^\n\n\n"
-					data-separator-notes="^Note:">
+
+				<!-----------------------------------------------------------------------------------------------------
+				-- Case Study: Trampled by Your Own Customers
+				------------------------------------------------------------------------------------------------------->
+				<section data-background-color="darkblue">
+					<section data-background-image="./assets/trampled-by-customers.jpg">
+						<h2 style="background-color: black; border-radius: 10px;">Case Study: <br/> Murder by the Masses</h2>
+					</section>
+
+					<section>
+						<h2 style="margin: 0;">The Challenge</h2>
+						<h2 style="margin-top: 0; font-size: 24px;">Case Study: Murder by the Masses</h2>
+						<div style="display: flex; justify-content: space-evenly; align-items: flex-start;">
+							<div style="width: 200px;" class="fragment fade-up">
+								<div style="height: 150px;">
+									<img src="assets/website-redesign.jpg" style="border-radius: 10px; height: 128px;">
+								</div>
+								<p style="font-size: 24px;">E-Commerce Website Redesign</p>
+							</div>
+							<p style="align-self: center;" class="fragment fade-up">+</p>
+							<div style="width: 200px;" class="fragment fade-up">
+								<div style="height: 150px;">
+									<img src="assets/developers.jpg" style="border-radius: 10px; height: 128px;">
+								</div>
+								<p style="font-size: 24px;">>300 Engineers</p>
+							</div>
+							<p style="align-self: center;" class="fragment fade-up">+</p>
+							<div style="width: 200px;" class="fragment fade-up">
+								<div style="height: 150px;">
+									<img src="assets/time.jpg" style="border-radius: 10px; height: 128px;">
+								</div>
+								<p style="font-size: 24px;">3 Years</p>
+							</div>
+							<p style="align-self: center;" class="fragment fade-up">+</p>
+							<div style="width: 200px;" class="fragment fade-up">
+								<div style="height: 150px;">
+									<img src="assets/weight-lifting.webp" style="border-radius: 10px; height: 130px;">
+								</div>
+								<p style="font-size: 24px;">3 Months Load Testing</p>
+							</div>
+							<p style="align-self: center;" class="fragment fade-up">+</p>
+							<div style="width: 200px;" class="fragment fade-up">
+								<div style="height: 150px;">
+									<img src="assets/launch.jpg" style="border-radius: 10px;">
+								</div>
+								<p style="font-size: 24px;">6 Official Launch Dates</p>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h2 style="margin: 0;">The Tech Stack</h2>
+						<h2 style="margin-top: 0; font-size: 24px;">Case Study: Murder by the Masses</h2>
+						<div style="display: flex; justify-content: space-evenly; align-items: flex-start;">
+							<div style="width: 350px;" class="fragment fade-up">
+								<div style="height: 250px;">
+									<img src="assets/microservices.jpg" style="border-radius: 10px; height: 200px;">
+								</div>
+								<p>Several Backends</p>
+							</div>
+							<p style="align-self: center;" class="fragment fade-up">+</p>
+							<div style="width: 350px;" class="fragment fade-up">
+								<div style="height: 250px;">
+									<img src="assets/servers.png" style="border-radius: 10px;">
+								</div>
+								<p>Server Side Rendering</p>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h2 style="margin: 0;">Launch Day</h2>
+						<h2 style="margin-top: 0; font-size: 24px;">Case Study: Murder by the Masses</h2>
+						<ul style="font-size: 32px;">
+							<li class="fragment fade-up">9:00 &nbsp; &rarr; &nbsp; Redirects are applied</li>
+							<li class="fragment fade-up">9:05 &nbsp; &rarr; &nbsp; >10,000 active sessions</li>
+							<li class="fragment fade-up">9:10 &nbsp; &rarr; &nbsp; >50,000 active sessions</li>
+							<li class="fragment fade-up">9:30 &nbsp; &rarr; &nbsp; 250,000 active sessions</li>
+						</ul>
+						<div class="fragment fade-up">
+							<img src="assets/bomb.jpg" style="height: 300px;">
+							<p style="position: relative; top: -110px;">... & the site crashed</p>
+						</div>
+					</section>
+
+					<section>
+						<h2 style="margin: 0;">The Autopsy</h2>
+						<h2 style="margin-top: 0; font-size: 24px;">Case Study: Murder by the Masses</h2>
+						<ul style="font-size: 28px; margin-top: 10px;">
+							<li class="fragment fade-up" data-fragment-index="1">The large number of sessions killed the site.</li>
+							<li class="fragment fade-up" data-fragment-index="2"><span>Did marketing advertise the launch?</span><span data-fragment-index="3" class="fragment fade-up">... No</span></li>
+							<li class="fragment fade-up" data-fragment-index="4">Website URL paths were re-structured.</li>
+							<li class="fragment fade-up" data-fragment-index="5">Search engines, scrapers & shopbots noticed the change, started re-caching.</li>
+							<li class="fragment fade-up" data-fragment-index="6">None of these used session cookies.</li>
+							<li class="fragment fade-up" data-fragment-index="7">Session replication was enabled.</li>
+							<li class="fragment fade-up" data-fragment-index="8">Server-side-rendering meant effort from the backend for a page that never changed (1000+ DB requests).</li>
+							<li class="fragment fade-up" data-fragment-index="9">Each session was storing large amounts of data (search results, etc.).</li>
+						</ul>
+						<img class="fragment fade-up" data-fragment-index="1" src="assets/terminator.png" style="height: 150px;">
+						<img class="fragment fade-up" data-fragment-index="1" src="assets/cookies.png" style="height: 150px;">
+						<aside class="notes">
+							<ol>
+								<li>Since URLs changed, search engines started to refetch their cache</li>
+								<li>Scrapers and shopbots: these commercial scrapers actually sell a subscription service. A retailer wanting to track competitors prices can subscribe to a report.</li>
+								<li>Since they didnt use cookies, each request would create a new session</li>
+								<li>Sessions were consuming RAM, CPU and network bandwidth</li>
+							</ol>
+						</aside>
+					</section>
+
+					<section>
+						<h2 style="margin: 0;">The Autopsy</h2>
+						<h2 style="margin-top: 0; font-size: 24px;">Case Study: Murder by the Masses</h2>
+						<div style="display: flex; justify-content: space-evenly;">
+							<div style="min-width: 300px;" class="fragment">
+								<img src="assets/low-memory.png" style="height: 200px;">
+								<p>#Sessions</p>
+							</div>
+							<p style="align-self: center;" class="fragment">+</p>
+							<div style="margin: 0 30px;" class="fragment">
+								<img src="assets/bandwidth.jpg" style="height: 200px; border-radius: 10px;">
+								<p>Bandwidth</p>
+							</div>
+							<p style="align-self: center;" class="fragment">=</p>
+							<div class="fragment">
+								<img src="assets/blocked-toilet.png" style="height: 200px;">
+								<p>Blocked Request Threads</p>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h2 style="margin: 0;">How did we get here?</h2>
+						<h2 style="margin-top: 0; font-size: 24px;">Case Study: Murder by the Masses</h2>
+						<div style="display: flex; justify-content: space-evenly; font-size: 21px;">
+							<div class="fragment fade-up">
+								<img src="assets/built-for-acpt.jpg" style="height: 300px;">
+								<ul>
+									<li>Built for ACPT</li>
+									<li class="fragment fade-up">ACPT vs PROD topology mismatch</li>
+								</ul>
+							</div>
+							<p style="align-self: center; font-size: 36px;" class="fragment fade-up">+</p>
+							<div class="fragment fade-up" style="width: 700px;">
+								<img src="assets/load-testing.jpg" style="height: 300px;">
+								<ul style="padding-left: 30px;">
+									<li>Unrealistic load testing</li>
+									<li class="fragment fade-up">Marketing required 25,000 concurrent users</li>
+									<li class="fragment fade-up">Concurrent users != active sessions</li>
+									<li class="fragment fade-up">The issue was encountered during testing, but considered unrealistic</li>
+									<li class="fragment fade-up">Polite users only</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h2 style="margin: 0;">Anti-patterns</h2>
+						<h2 style="margin-top: 0; font-size: 24px;">Case Study: Murder by the Masses</h2>
+						<ul>
+							<li class="fragment" data-fragment-index="1"><strong>Cascading Failures:</strong> a crack that jumps from one system to another.</li>
+							<li class="fragment" data-fragment-index="2"><strong>Users:</strong> unwanted/malicious users, session memory, traffic.</li>
+							<li class="fragment" data-fragment-index="3"><strong>Blocked Threads:</strong> these can happen any time you check resources out of a connection pool (i.e. DB), deal with caches or objects registries.</li>
+						</ul>
+						<img src="assets/crack.jpg" style="height: 200px;" class="fragment" data-fragment-index="1">
+						<img src="assets/users.png" style="height: 200px;" class="fragment" data-fragment-index="2">
+						<img src="assets/blocked-toilet.png" style="height: 200px;" class="fragment" data-fragment-index="3">
+					</section>
+				</section>
+
+				<!-----------------------------------------------------------------------------------------------------
+				-- Case Study: Holiday Traffic Jam
+				------------------------------------------------------------------------------------------------------->
+				<section data-background-color="#4A148C">
+					<section data-background-image="./assets/traffic.jpg">
+						<h2 style="background-color: black; border-radius: 10px;">Case Study: <br/> Holiday Traffic Jam</h2>
+					</section>
+
+					<section>
+						<h2 style="margin: 0;">The Challenge</h2>
+						<h2 style="margin-top: 0; font-size: 24px;">Case Study: Holiday Traffic Jam</h2>
+					</section>
 				</section>
 			</div>
 		</div>
