@@ -180,16 +180,28 @@
 					<section>
 						<h2 style="margin: 0;">Anti-patterns</h2>
 						<h2 style="margin-top: 0; font-size: 24px;">Case Study: Murder by the Masses</h2>
-						<ul style="font-size: 28px; padding: 30px 0;">
-							<li class="fragment" data-fragment-index="1"><strong>Cascading Failures:</strong> a crack that jumps from one system to another.</li>
-							<li class="fragment" data-fragment-index="2"><strong>Users:</strong> unwanted/malicious users, session memory, traffic.</li>
-							<li class="fragment" data-fragment-index="3"><strong>Blocked Threads:</strong> these can happen any time you check resources out of a connection pool (i.e. DB), deal with caches or objects registries.</li>
-							<li class="fragment" data-fragment-index="4"><strong>Dogpile:</strong> highly concentrated demand.</li>
-						</ul>
-						<img src="assets/crack.jpg" style="height: 150px;" class="fragment" data-fragment-index="1">
-						<img src="assets/users.png" style="height: 150px;" class="fragment" data-fragment-index="2">
-						<img src="assets/blocked-toilet.png" style="height: 150px;" class="fragment" data-fragment-index="3">
-						<img src="assets/dogpile.png" style="height: 150px; padding-left: 30px;" class="fragment" data-fragment-index="4">
+						<div style="display: flex; align-items: center; justify-content: space-evenly;" class="fragment">
+							<img src="assets/crack.jpg" style="height: 100px;">
+							<h5 style="width: 250px;">Cascading <br/> Failures</h5>
+							<p style="font-size: 18px; width: 350px;">a crack that jumps from one system to another</p>
+						</div>
+						<div style="display: flex; align-items: center; justify-content: space-evenly;" class="fragment">
+							<img src="assets/users.png" style="height: 100px;">
+							<h5 style="width: 250px;">Users</h5>
+							<p style="font-size: 18px; width: 350px;">unwanted/malicious users, session memory, traffic</p>
+						</div>
+						<div style="display: flex; align-items: center; justify-content: space-evenly;" class="fragment">
+							<div style="width: 150px;">
+								<img src="assets/blocked-toilet.png" style="height: 100px;">
+							</div>
+							<h5 style="width: 250px;">Blocked <br/> Threads</h5>
+							<p style="font-size: 18px; width: 350px;">these can happen any time you check resources out of a connection pool (i.e. DB), deal with caches or objects registries</p>
+						</div>
+						<div style="display: flex; align-items: center; justify-content: space-evenly;" class="fragment">
+							<img src="assets/dogpile.png" style="height: 100px; margin-left: 20px;">
+							<h5 style="width: 250px;">Dogpile</h5>
+							<p style="font-size: 18px; width: 350px;">highly concentrated demand</p>
+						</div>
 					</section>
 				</section>
 
