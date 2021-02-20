@@ -213,6 +213,7 @@
 						<h2 style="background-color: black; border-radius: 10px;">Case Study: <br/> Holiday Traffic Jam</h2>
 					</section>
 
+					<!-- The Challenge -->
 					<section>
 						<h2 style="margin: 0;">The Challenge</h2>
 						<h2 style="margin-top: 0; font-size: 24px;">Case Study: Holiday Traffic Jam</h2>
@@ -247,6 +248,7 @@
 						</div>
 					</section>
 
+					<!-- Cautious Optimism -->
 					<section>
 						<h2 style="margin: 0;">Cautious optimism</h2>
 						<h2 style="margin-top: 0; font-size: 24px;">Case Study: Holiday Traffic Jam</h2>
@@ -274,6 +276,7 @@
 						</div>
 					</section>
 
+					<!-- Thanksgiving Day -->
 					<section>
 						<h2 style="margin: 0;">Thanksgiving Day</h2>
 						<h2 style="margin-top: 0; font-size: 24px;">Case Study: Holiday Traffic Jam</h2>
@@ -308,39 +311,101 @@
 						</div>
 					</section>
 
+					<!-- Black Friday I -->
 					<section>
 						<h2 style="margin: 0;">Black friday</h2>
 						<h2 style="margin-top: 0; font-size: 24px;">Case Study: Holiday Traffic Jam</h2>
 						<div style="display: flex; justify-content: space-evenly; align-items: flex-start;">
 							<div style="width: 200px;" class="fragment fade-up">
 								<div style="height: 150px;">
-									<img src="assets/thanksgiving.png" style="border-radius: 10px; height: 128px;">
+									<img src="assets/orders-more.jpg" style="border-radius: 10px; height: 128px;">
 								</div>
-								<p style="font-size: 24px;">Spending Thanksgiving at your parents'</p>
-							</div>
-							<p style="align-self: center;" class="fragment fade-up">+</p>
-							<div style="width: 200px;" class="fragment fade-up">
-								<div style="height: 150px;">
-									<img src="assets/orders.jpg" style="border-radius: 10px; height: 128px;">
-								</div>
-								<p style="font-size: 24px;">As many orders as in an entire month</p>
-							</div>
-							<p style="align-self: center;" class="fragment fade-up">+</p>
-							<div style="width: 200px;" class="fragment fade-up">
-								<div style="height: 150px;">
-									<img src="assets/performance.png" style="border-radius: 10px; height: 128px;">
-								</div>
-								<p style="font-size: 24px;">Overall performance stressed but stable</p>
-							</div>
-							<p style="align-self: center;" class="fragment fade-up">+</p>
-							<div style="width: 200px;" class="fragment fade-up">
-								<div style="height: 150px;">
-									<img src="assets/passed.jpg" style="border-radius: 10px; height: 128px;">
-								</div>
-								<p style="font-size: 24px;">Passed first killer load test</p>
+								<p style="font-size: 24px;">Orders trending even more than on Thanksgiving</p>
 							</div>
 						</div>
 					</section>
+
+					<!-- Black Friday II -->
+					<section>
+						<h2 style="margin: 0;">Black friday</h2>
+						<h2 style="margin-top: 0; font-size: 24px;">Case Study: Holiday Traffic Jam</h2>
+						<div style="display: flex; justify-content: space-evenly; align-items: flex-start;">
+							<div style="width: 800px;">
+								<div style="height: 500px;">
+									<img src="assets/system-failure.png" style="border-radius: 10px">
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- Investigation -->
+					<section>
+						<h2 style="margin: 0;">Investigation</h2>
+						<h2 style="margin-top: 0; font-size: 24px;">Case Study: Holiday Traffic Jam</h2>
+						<ul style="font-size: 28px; margin-top: 10px;">
+							<li class="fragment fade-up" data-fragment-index="1">Session counts were very high, higher than the day before</li>
+							<li class="fragment fade-up" data-fragment-index="2">Network bandwidth usage was high but not hitting a limit</li>
+							<li class="fragment fade-up" data-fragment-index="3">Search servers, our usual culprit, were responding well. System stats looked healthy</li>
+							<li class="fragment fade-up" data-fragment-index="4"><span>Web, application, and database CPU usage were low</span><span span data-fragment-index="5" class="fragment fade-up"> - really low</span></li>
+							<li class="fragment fade-up" data-fragment-index="6">Request-handling threads were almost all busy</li>
+							<li class="fragment fade-up" data-fragment-index="7"><span>Application server page latency (response time) was high</span><span span data-fragment-index="8" class="fragment fade-up"> - it was effectively infinite</span></li>
+						</ul>
+					</section>
+
+					<!-- The smoking gun -->
+					<section>
+						<h2 style="margin: 0;">The smoking gun</h2>
+						<h2 style="margin-top: 0; font-size: 24px;">Case Study: Holiday Traffic Jam</h2>
+						<ul style="font-size: 28px; margin-top: 10px;">
+							<li class="fragment fade-up" data-fragment-index="1">Thread dumps on the frontend servers showed that 3'000 threads were tied up doing nothing ...</li>
+							<li class="fragment fade-up" data-fragment-index="2">... they were all blocked on a resource pool, one that had no timeout</li>
+							<li class="fragment fade-up" data-fragment-index="3">Attention swung to the backend, where 450 threads were occupied making calls to an external integration point ...</li>
+							<li class="fragment fade-up" data-fragment-index="4">... one that, once again, had no timeout</li>
+							<li class="fragment fade-up" data-fragment-index="5">A maintenance window left the external integration point with a capacity of serving 25 threads concurrently ...</li>
+							<li class="fragment fade-up" data-fragment-index="6">... and the maintenance windows would last until Monday</li>
+						</ul>
+					</section>
+
+					<!-- The quick fix -->
+					<section>
+						<h2 style="margin: 0;">The quick fix</h2>
+						<h2 style="margin-top: 0; font-size: 24px;">Case Study: Holiday Traffic Jam</h2>
+						<ul style="font-size: 28px; margin-top: 10px;">
+							<li class="fragment fade-up" data-fragment-index="1">One of your tools allowed you to modify your resource pools on the fly</li>
+							<li class="fragment fade-up" data-fragment-index="2">You set both <b>max</b> and <b>checkoutBlockTime</b> for that resource pool to <b>0</b></li>
+							<li class="fragment fade-up" data-fragment-index="3">Employing a fail fast strategy</li>
+						</ul>
+					</section>
+
+					<!-- Anti Patterns -->
+					<section>
+						<h2 style="margin: 0;">Anti-patterns</h2>
+						<h2 style="margin-top: 0; font-size: 24px;">Case Study: Holiday Traffic Jam</h2>
+						<div style="display: flex; align-items: center; justify-content: space-evenly;" class="fragment">
+							<div style="width: 150px;">
+								<img src="assets/blocked-toilet.png" style="height: 100px;">
+							</div>
+							<h5 style="width: 250px;">Blocked <br/> Threads</h5>
+							<p style="font-size: 18px; width: 350px;">these can happen any time you check resources out of a connection pool (i.e. DB), deal with caches or objects registries</p>
+						</div>
+						<div style="display: flex; align-items: center; justify-content: space-evenly;" class="fragment">
+							<img src="assets/integration.png" style="height: 100px;">
+							<h5 style="width: 250px;">Integration <br/> Points</h5>
+							<p style="font-size: 18px; width: 350px;">Integration points are the number-one killer of systems. Every single one of them presents a stability risk</p>
+						</div>
+						<div style="display: flex; align-items: center; justify-content: space-evenly;" class="fragment">
+							<img src="assets/unbalance.jpg" style="height: 100px;">
+							<h5 style="width: 250px;">Unbalanced <br/> Capacities</h5>
+							<p style="font-size: 18px; width: 350px;">watch out for mismatched ratios between systems and layers- always think in terms of end-to-end scalability</p>
+						</div>
+						<div style="display: flex; align-items: center; justify-content: space-evenly;" class="fragment">
+							<img src="assets/scalability.png" style="height: 100px;">
+							<h5 style="width: 250px;">Scaling <br/> Effects</h5>
+							<p style="font-size: 18px; width: 350px;">always examine how your system behaves when you're scaling out</p>
+						</div>
+
+					</section>
+				</section>
 				</section>
 
 				<!-----------------------------------------------------------------------------------------------------
@@ -356,7 +421,6 @@
 				</section>
 			</div>
 		</div>
-
 		<script src="node_modules/reveal.js/dist/reveal.js"></script>
 		<script src="node_modules/reveal.js/plugin/notes/notes.js"></script>
 		<script src="node_modules/reveal.js/plugin/markdown/markdown.js"></script>
