@@ -419,8 +419,36 @@
 					</section>
 
 					<!-- Bulkhead -->
-					<section data-background-image="./assets/stability.jpg">
+					<section data-background-image="./assets/sinking-ship.jpg">
 						<h2 style="background-color: black; opacity: 0.8; border-radius: 10px;">Bulkhead</h2>
+					</section>
+
+					<section>
+						<h2 style="margin: 0;">Bulkhead</h2>
+						<h2 style="margin-top: 0; font-size: 24px;">Stability patterns</h2>
+						<p>Compartmentalise to avoid sinking whole ship</p>
+						<img src="assets/bulkheads-ship.jpeg">
+					</section>
+
+					<section>
+						<h2 style="margin: 0;">Bulkhead Example</h2>
+						<h2 style="margin-top: 0; font-size: 24px;">Stability patterns</h2>
+						<div style="display: flex; justify-content: center; height: 540px;">
+							<img src="assets/bulkhead-start.png" class="fragment fade-out" data-fragment-index="1" style="position: absolute; height: 500px;">
+							<img src="assets/bulkhead-1-request.png" class="fragment fade-in-then-out" data-fragment-index="1" style="position: absolute; height: 500px;">
+							<img src="assets/bulkhead-multi-request.png" class="fragment fade-in-then-out" data-fragment-index="2" style="position: absolute; height: 500px;">
+							<img src="assets/bulkhead-slow-start.png" class="fragment fade-in-then-out" data-fragment-index="3" style="position: absolute; height: 500px;">
+							<img src="assets/bulkhead-blocked-requests.png" class="fragment fade-in-then-out" data-fragment-index="4" style="position: absolute; height: 500px;">
+							<img src="assets/bulkhead-end.png" class="fragment fade-in-then-out" data-fragment-index="5" style="position: absolute; height: 500px;">
+						</div>
+						<div style="display: flex; justify-content: center;">
+							<p class="fragment fade-out" data-fragment-index="1" style="margin: 0; font-size: 18px; position: absolute;">
+								Thread Pool
+							</p>
+							<p class="fragment fade-in-then-out" data-fragment-index="5" style="margin: 0; font-size: 18px; position: absolute;">
+								Do not allow more than X requests per bulkhead.
+							</p>
+						</div>
 					</section>
 
 					<!-- Circuit Breaker -->
