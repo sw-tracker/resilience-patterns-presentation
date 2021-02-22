@@ -588,12 +588,56 @@
 					</section>
 
 					<!-- Test harness -->
-					<section data-background-image="./assets/stability.jpg">
+					<section data-background-image="./assets/test-harness.webp">
 						<h2 style="background-color: black; opacity: 0.8; border-radius: 10px;">Test<br/>Harness</h2>
 					</section>
 
+					<section>
+						<h2 style="margin: 0;">Test Harness</h2>
+						<h2 style="margin-top: 0; font-size: 24px;">Stability patterns</h2>
+						<ul style="font-size: 28px; margin-top: 10px;">
+							<li class="fragment fade-in-then-semi-out" data-fragment-index="1">Distributed systems have failure modes that are difficult to provoke on dev environments</li>
+							<li class="fragment fade-in-then-semi-out" data-fragment-index="2">Integration tests tend to cover what is expected of the system</li>
+							<li class="fragment fade-in-then-semi-out" data-fragment-index="3">All systems will eventually run into the unexpected</li>
+							<li class="fragment fade-in-then-semi-out" data-fragment-index="4">Do we know the max load of our system?</li>
+						</ul>
+                        <img src="assets/acrobats.jpg" style="height: 300px;" class="fragment" data-fragment-index="1">
+					</section>
+
+					<section>
+						<h2 style="margin: 0;">Test Harness</h2>
+						<h2 style="margin-top: 0; font-size: 24px;">Stability patterns</h2>
+						<ul style="font-size: 32px; margin-top: 10px;">
+							<li class="fragment fade-in-then-semi-out">Emulate remote systems</li>
+							<li class="fragment fade-in-then-semi-out">Be devious, nasty and vicious in your tests</li>
+							<li class="fragment fade-in-then-semi-out">Its job is to make the system under test cynical</li>
+							<li class="fragment fade-in-then-semi-out">Introduce latency, drop packets, high load, etc.</li>
+						</ul>
+						<img src="assets/devil.png" style="margin: 0;">
+					</section>
+
+					<section data-auto-animate>
+						<h2 style="margin: 0;">Test Harness Example</h2>
+						<h2 style="margin-top: 0; font-size: 24px;">Stability patterns</h2>
+						<img src="assets/simbian-army.png" style="border-radius: 10px; height: 400px; margin: 0;" data-id="chaos-img">
+						<p style="margin: 0">Chaos Engineering:</p>
+						<p style="margin: 0;">Breaking things on purpose</p>
+					</section>
+
+					<section data-auto-animate>
+						<h2 style="margin: 0;">Test Harness Example</h2>
+						<h2 style="margin-top: 0; font-size: 24px;">Stability patterns</h2>
+						<p style="margin-bottom: 0">Chaos Engineering</p>
+						<ul style="font-size: 32px; margin-top: 10px;">
+							<li class="fragment fade-in-then-semi-out">Introduce chaos in production</li>
+							<li class="fragment fade-in-then-semi-out">Abruptly reduce the workforce</li>
+							<li class="fragment fade-in-then-semi-out">Building resilient systems requires experience with failure</li>
+						</ul>
+						<img src="assets/simbian-army.png" style="border-radius: 10px; height: 250px;" data-id="chaos-img">
+					</section>
+
 					<!-- Decoupling Middleware -->
-					<section data-background-image="./assets/stability.jpg">
+					<section data-background-image="./assets/train_coupling.jpg">
 						<h2 style="background-color: black; opacity: 0.8; border-radius: 10px;">Decoupling<br/>Middleware</h2>
 					</section>
 
@@ -637,6 +681,43 @@
 							<li class="fragment fade-up" data-fragment-index="5">Consumers can process messages at their own pace</li>
 						</ul>
 					</section>
+				</section>
+
+				<!-----------------------------------------------------------------------------------------------------
+				-- All Patterns
+				------------------------------------------------------------------------------------------------------->
+				<section>
+					<h2>Stability Patterns</h2>
+					<div style="display: flex; font-size: 32px;">
+						<div>
+							<div style="display: flex; justify-content: space-evenly; height: 200px; width: 500px;">
+								<img src="assets/bulkheads-ship.jpeg" style="width: 200px; border-radius: 10px;">
+								<p>Bulkhead</p>
+							</div>
+							<div style="display: flex; justify-content: space-evenly; height: 200px; width: 500px;">
+								<img src="assets/circuit-breaker-pattern.png" style="width: 200px; background-color: white; border-radius: 10px;">
+								<p>Circuit <br/> Breaker</p>
+							</div>
+							<div style="display: flex; justify-content: space-evenly; height: 200px; width: 500px;">
+								<img src="assets/speedy-gonzalez.png" style="width: 200px; background-color: white; border-radius: 10px;">
+								<p>Fail Fast</p>
+							</div>
+						</div>
+						<div>
+							<div style="display: flex; justify-content: space-evenly; height: 200px; width: 500px;">
+								<img src="assets/backpressure-pull-based.png" style="width: 200px; background-color: white; border-radius: 10px;">
+								<p>Back Pressure</p>
+							</div>
+							<div style="display: flex; justify-content: space-evenly; height: 200px; width: 500px;">
+								<img src="assets/simbian-army.png" style="width: 200px; background-color: white; border-radius: 10px;">
+								<p>Test Harness</p>
+							</div>
+							<div style="display: flex; justify-content: space-evenly; height: 200px; width: 500px;">
+								<img src="assets/topic.png" style="width: 200px; background-color: white; border-radius: 10px;">
+								<p>Decoupling <br/> Middleware</p>
+							</div>
+						</div>
+					</div>
 				</section>
 
 				<!-----------------------------------------------------------------------------------------------------
