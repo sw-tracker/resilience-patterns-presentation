@@ -576,6 +576,47 @@
 					<section data-background-image="./assets/stability.jpg">
 						<h2 style="background-color: black; opacity: 0.8; border-radius: 10px;">Decoupling<br/>Middleware</h2>
 					</section>
+
+					<section>
+						<h2 class="fragment" data-fragment-index="1">Too often we characterize our business challenges as synchronous in nature</h2>
+					</section>
+
+					<section>
+						<h2 style="margin: 0;">Decoupling Middleware</h2>
+						<h2 style="margin-top: 0; font-size: 24px;">Stability patterns</h2>
+						<div style="display: flex; justify-content: space-evenly; align-items: flex-start;">
+							<div style="width: 800px;">
+								<div style="height: 250px;">
+									<img src="assets/request-response.png" style="border-radius: 10px; background-color: white">
+								</div>
+							</div>
+						</div>
+						<ul style="font-size: 28px; margin-top: 10px;">
+							<li class="fragment fade-up" data-fragment-index="1">Sender and receiver need to know each other</li>
+							<li class="fragment fade-up" data-fragment-index="2">They both need to be available at the same time</li>
+							<li class="fragment fade-up" data-fragment-index="3">They must be able to scale proportionally</li>
+							<li class="fragment fade-up" data-fragment-index="4">Every team must be concerned with scalability and availability</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2 style="margin: 0;">Decoupling Middleware</h2>
+						<h2 style="margin-top: 0; font-size: 24px;">Stability patterns</h2>
+						<div style="display: flex; justify-content: space-evenly; align-items: flex-start;">
+							<div style="width: 800px;">
+								<div style="height: 300px;">
+									<img src="assets/topic.png" style="border-radius: 10px; background-color: white">
+								</div>
+							</div>
+						</div>
+						<ul style="font-size: 28px; margin-top: 10px;">
+							<li class="fragment fade-up" data-fragment-index="1">Only middleware needs to be optimized for scalability and availability</li>
+							<li class="fragment fade-up" data-fragment-index="2">Producer and consumer don't know about each other</li>
+							<li class="fragment fade-up" data-fragment-index="3">This makes up for an easily extendable architecture</li>
+							<li class="fragment fade-up" data-fragment-index="4">Producer and consumer can process messages at different times</li>
+							<li class="fragment fade-up" data-fragment-index="5">Consumers can process messages at their own pace</li>
+						</ul>
+					</section>
 				</section>
 
 				<!-----------------------------------------------------------------------------------------------------
